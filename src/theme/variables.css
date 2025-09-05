@@ -1,0 +1,182 @@
+/* variables.css */
+@import "tailwindcss";
+
+/* Ionic Color Variables */
+:root {
+  /* Primary Color (Indigo) */
+  --ion-color-primary: #4f46e5;
+  --ion-color-primary-rgb: 79, 70, 229;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #463eca;
+  --ion-color-primary-tint: #6159e8;
+
+  /* Secondary Color (Purple) */
+  --ion-color-secondary: #7c3aed;
+  --ion-color-secondary-rgb: 124, 58, 237;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #6d33cf;
+  --ion-color-secondary-tint: #894eef;
+
+  /* Background Colors */
+  --ion-background-color: #f9fafb;
+  --ion-background-color-rgb: 249, 250, 251;
+  
+  /* Text Colors */
+  --ion-text-color: #1f2937;
+  --ion-text-color-rgb: 31, 41, 55;
+  
+  /* Border Colors */
+  --ion-border-color: #e5e7eb;
+  
+  /* Card Colors */
+  --ion-card-background: #ffffff;
+  --ion-card-color: #1f2937;
+
+  /* Step Colors */
+  --ion-color-step-50: #f9fafb;
+  --ion-color-step-100: #f3f4f6;
+  --ion-color-step-150: #e5e7eb;
+  --ion-color-step-200: #d1d5db;
+  --ion-color-step-250: #9ca3af;
+  --ion-color-step-300: #6b7280;
+  --ion-color-step-350: #4b5563;
+  --ion-color-step-400: #374151;
+  --ion-color-step-450: #1f2937;
+  --ion-color-step-500: #111827;
+  --ion-color-step-550: #0f172a;
+  --ion-color-step-600: #020617;
+
+  /* Font Family */
+  --ion-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Padding */
+  --ion-padding: 16px;
+  --ion-padding-lg: 24px;
+  --ion-padding-sm: 12px;
+
+  /* Margin */
+  --ion-margin: 16px;
+  --ion-margin-lg: 24px;
+  --ion-margin-sm: 12px;
+
+  /* Border Radius */
+  --ion-border-radius: 8px;
+  --ion-border-radius-lg: 12px;
+  --ion-border-radius-sm: 4px;
+}
+
+/* Dark Theme Variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ion-background-color: #111827;
+    --ion-background-color-rgb: 17, 24, 39;
+    
+    --ion-text-color: #f9fafb;
+    --ion-text-color-rgb: 249, 250, 251;
+    
+    --ion-border-color: #374151;
+    
+    --ion-card-background: #1f2937;
+    --ion-card-color: #f9fafb;
+  }
+}
+
+/* Ionic Component Overrides */
+.ion-content-bg {
+  --background: var(--ion-background-color);
+}
+
+/* Custom Utility Classes for Ionic Components */
+.ion-toolbar-custom {
+  --background: #ffffff;
+  --border-color: #e5e7eb;
+  --color: #1f2937;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ion-toolbar-custom {
+    --background: #1f2937;
+    --border-color: #374151;
+    --color: #f9fafb;
+  }
+}
+
+/* Ensure Tailwind works properly with Ionic */
+ion-content {
+  --background: var(--ion-background-color);
+  --color: var(--ion-text-color);
+}
+
+ion-header {
+  --background: var(--ion-background-color);
+}
+
+ion-toolbar {
+  --background: var(--ion-background-color);
+  --color: var(--ion-text-color);
+  --border-color: var(--ion-border-color);
+}
+
+ion-item {
+  --background: var(--ion-background-color);
+  --color: var(--ion-text-color);
+  --border-color: var(--ion-border-color);
+}
+
+ion-card {
+  --background: var(--ion-card-background);
+  --color: var(--ion-card-color);
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible,
+ion-item:focus-visible {
+  outline: 2px solid var(--ion-color-primary);
+  outline-offset: 2px;
+}
+
+/* Scrollbar styling for web */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ion-color-step-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ion-color-step-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ion-color-step-400);
+}
+
+ion-menu {
+  z-index: 1000;
+}
+
+ion-popover {
+  z-index: 1001;
+}
+
+/* Ensure menu button works on mobile */
+@media (max-width: 768px) {
+  ion-menu-button {
+    display: block !important;
+  }
+}
+
+/* Prevent body scrolling when menu is open */
+.menu-content-open {
+  overflow: hidden;
+}

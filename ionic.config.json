@@ -1,0 +1,7 @@
+{
+  "name": "study-buddy",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
